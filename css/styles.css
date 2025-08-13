@@ -1,0 +1,243 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    img {
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px black;
+    }
+}
+
+@font-face {
+    font-family: "Young Serif";
+    font-weight: 100;
+    src: url(../assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+
+/* @font-face {
+    font-family: "Outfit";
+    font-weight: 400 600 700;
+    src: url(../assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+    font-style: normal;
+} */
+
+@font-face {
+  font-family: "Outfit";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Outfit";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Outfit";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
+}
+
+
+:root {
+    --body-bg: hsl(30, 54%, 90%);
+    --pink-bg: hsl(330, 100%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --rose: hsl(332, 51%, 32%);
+    --brown: hsl(14, 45%, 36%);
+    --dark-stone: hsl(24, 5%, 18%);
+    --lighter-stone: hsl(30, 10%, 34%);
+    --lightest-stone:  hsl(30, 18%, 87%);
+
+    --fs-reg: 1rem;
+    --fs-md: 1.25rem;
+    --fs-large: 2.5rem;
+    --fs-h2: 1.75rem;
+
+    --ff-outfit: "Outfit";
+    --ff-youngserif:"Young Serif";
+
+    --li-padding: 8px;
+}
+
+html {
+    font-family: "Young Serif", Arial;
+}
+
+body {
+    background-color: var(--body-bg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: var(--white);
+    padding: 50px;
+    margin: 2rem;
+    border-radius: 25px;
+    
+}
+
+h1 {
+    font-size: var(--fs-large);
+    margin-bottom: 20px;
+    font-weight: 100;
+}
+
+h2 {
+    color: var(--brown);
+    font-size: var(--fs-h2);
+    font-weight: 200;
+    margin: 15px 0;
+}
+
+p,
+li,
+td {
+    color: var(--lighter-stone);
+    font-family: "Outfit", Arial;
+}
+
+.pinkbox {
+    background-color: var(--pink-bg);
+    margin: 20px 0;
+    border-radius: 10px;
+    padding-bottom: 20px;
+
+    h2 {
+        font-family: var(--ff-outfit);
+    color: var(--rose);
+    margin: 10px;
+    font-weight: 600;
+    font-size: var(--fs-md);
+    padding: 20px 0 0 10px;
+    }
+
+    li {
+        margin-left: 40px;
+        padding: var(--li-padding);
+    }
+
+    li::marker {
+        color: var(--rose);
+    }
+    
+    span {
+        color: var(--lighter-stone);
+        font-weight: 700;
+    }
+}
+
+.ingredients {
+
+    li {
+        list-style-position: inside;
+        padding: var(--li-padding);
+    
+    }
+
+    li::marker {
+        color: var(--brown);
+        
+    }
+}
+
+hr {
+    margin-top: 25px;
+}
+
+.instructions {
+    li {
+        list-style-position: inside;
+        padding: var(--li-padding);
+    
+    }
+
+
+    li::marker {
+        color: var(--brown);
+        font-weight: 600;
+
+    }
+
+    span {
+        color: var(--lighter-stone);
+        font-weight: 600;
+        margin-left: 0.5rem;
+    }
+}
+
+.nutrition-table {
+        width: 100%;
+        border-collapse: collapse;
+
+
+        tr + tr {
+            border-top: 1px solid var(--lightest-stone);
+        }
+
+        td:first-child {
+            text-align: left;
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+        }
+
+
+    span {
+        display: inline-block;
+        color: var(--brown);
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 375px) {
+
+    main {
+        padding: 0;
+    }
+
+    .container {
+        padding: 1rem;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        overflow: hidden;
+    }
+
+    .container > img {
+        display: block;
+        width: calc(100% + 2rem);
+        margin-left: -1rem;
+        margin-right: -1rem;
+        margin-top: -1rem;
+        border-radius: 0;
+    }
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer a:link {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: blue;
+    transform: scaleY(2);
+    text-shadow: 0 0 10px blueviolet;
+    text-decoration: underline;
+    
+}
+
+.footer a:active {
+    color: red;
+}
