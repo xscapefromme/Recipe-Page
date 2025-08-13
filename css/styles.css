@@ -74,14 +74,15 @@ html {
 
 body {
     background-color: var(--body-bg);
-    max-width: 800px;
-    margin: 0 auto;
+    
 }
 
 .container {
     background-color: var(--white);
     padding: 50px;
-    margin: 2rem;
+    
+    max-width: 800px;
+    margin: 5rem auto;
     border-radius: 25px;
     
 }
@@ -224,6 +225,7 @@ hr {
 
 .footer {
     text-align: center;
+    
 }
 
 .footer a:link {
