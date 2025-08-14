@@ -18,7 +18,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 ## Overview
 
 ### Links
-- Live Site URL: ((https://recipe-page-gamma-six.vercel.app/))
+- Live Site URL: (https://recipe-page-gamma-six.vercel.app/)
 
 ## My process
 
