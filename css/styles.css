@@ -2,48 +2,29 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
 
-    img {
+img {
         display: block;
         width: 100%;
         margin-bottom: 2rem;
         border-radius: 10px;
-        box-shadow: 0px 0px 10px black;
+        box-shadow: 0px 6px 24px rgba(0,0,0,0.12);
+        height: auto;
     }
-}
 
 @font-face {
     font-family: "Young Serif";
-    font-weight: 100;
+    font-weight: 400;
     src: url(../assets/fonts/young-serif/YoungSerif-Regular.ttf);
+    font-style: normal;
 }
 
-/* @font-face {
+@font-face {
     font-family: "Outfit";
-    font-weight: 400 600 700;
+    font-weight: 400 700;
     src: url(../assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
     font-style: normal;
-} */
-
-@font-face {
-  font-family: "Outfit";
-  font-weight: 400;
-  font-style: normal;
-  src: url("../assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Outfit";
-  font-weight: 600;
-  font-style: normal;
-  src: url("../assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Outfit";
-  font-weight: 700;
-  font-style: normal;
-  src: url("../assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
 }
 
 
@@ -62,41 +43,43 @@
     --fs-large: 2.5rem;
     --fs-h2: 1.75rem;
 
-    --ff-outfit: "Outfit";
-    --ff-youngserif:"Young Serif";
+    --ff-outfit: "Outfit", Arial;
+    --ff-youngserif:"Young Serif", Arial;
 
     --li-padding: 8px;
 }
 
-html {
-    font-family: "Young Serif", Arial;
-}
 
 body {
     background-color: var(--body-bg);
     
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     background-color: var(--white);
     padding: 50px;
-    
-    max-width: 800px;
+    max-width: 700px;
     margin: 5rem auto;
     border-radius: 25px;
-    
 }
 
 h1 {
+    font-family: var(--ff-youngserif);
     font-size: var(--fs-large);
     margin-bottom: 20px;
-    font-weight: 100;
+    /* font-weight: 200; */
 }
 
 h2 {
     color: var(--brown);
     font-size: var(--fs-h2);
-    font-weight: 200;
+    /* font-weight: 200; */
     margin: 15px 0;
 }
 
@@ -104,7 +87,7 @@ p,
 li,
 td {
     color: var(--lighter-stone);
-    font-family: "Outfit", Arial;
+    font-family: var(--ff-outfit);
 }
 
 .pinkbox {
@@ -112,8 +95,8 @@ td {
     margin: 20px 0;
     border-radius: 10px;
     padding-bottom: 20px;
-
-    h2 {
+}
+   .pinkbox h2 {
         font-family: var(--ff-outfit);
     color: var(--rose);
     margin: 10px;
@@ -122,64 +105,60 @@ td {
     padding: 20px 0 0 10px;
     }
 
-    li {
+   .pinkbox li {
         margin-left: 40px;
         padding: var(--li-padding);
     }
 
-    li::marker {
+    .pinkbox li::marker {
         color: var(--rose);
     }
     
-    span {
+     .pinkbox span {
         color: var(--lighter-stone);
         font-weight: 700;
     }
-}
 
-.ingredients {
 
-    li {
+
+
+  .ingredients li {
         list-style-position: inside;
         padding: var(--li-padding);
-    
+    }
+   .ingredients li::marker {
+        color: var(--brown);
     }
 
-    li::marker {
-        color: var(--brown);
-        
-    }
-}
 
 hr {
     margin-top: 25px;
 }
 
-.instructions {
-    li {
+.instructions li {
         list-style-position: inside;
         padding: var(--li-padding);
     
     }
 
 
-    li::marker {
+   .instructions li::marker {
         color: var(--brown);
         font-weight: 600;
 
     }
 
-    span {
+   .instructions span {
         color: var(--lighter-stone);
         font-weight: 600;
         margin-left: 0.5rem;
     }
-}
+
 
 .nutrition-table {
         width: 100%;
         border-collapse: collapse;
-
+    }
 
         tr + tr {
             border-top: 1px solid var(--lightest-stone);
@@ -192,10 +171,29 @@ hr {
         }
 
 
-    span {
+    .nutrition-table span {
         display: inline-block;
         color: var(--brown);
         font-weight: 600;
+    }
+
+@media (max-width: 700px){
+    
+    .container {
+        padding: 1rem;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        overflow: hidden;
+    }
+
+    .container > img {
+        display: block;
+        width: calc(100% + 2rem);
+        margin-left: -1rem;
+        margin-right: -1rem;
+        margin-top: -1rem;
+        border-radius: 0;
     }
 }
 
@@ -223,23 +221,28 @@ hr {
     }
 }
 
+
 .footer {
     text-align: center;
     
 }
 
 .footer a:link {
+    display:inline-block;
     text-decoration: none;
+    transition: color .2s ease, text-shadow .2s ease, transform .2s ease;
 }
 
 .footer a:hover {
     color: blue;
-    transform: scaleY(2);
     text-shadow: 0 0 10px blueviolet;
     text-decoration: underline;
-    
+    transform: scale(1.1);
+    margin-left: 0.3rem;
 }
 
 .footer a:active {
     color: red;
 }
+
+
